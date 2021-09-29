@@ -1,0 +1,1429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="/tb2/root/github/db4.8" name="0">
+      <df name=".pc">
+        <df name="0002-atomic_compare_exchange.patch">
+          <df name="dbinc">
+            <in>atomic.h</in>
+          </df>
+        </df>
+        <df name="CVE-2017-10140-cwd-db_config.patch">
+          <df name="env">
+            <in>env_open.c</in>
+          </df>
+        </df>
+        <df name="debian-changes-4.8.30-2">
+          <df name="dbinc">
+            <in>db_page.h</in>
+            <in>mutex_int.h</in>
+          </df>
+          <df name="dist">
+            <df name="aclocal_java">
+            </df>
+          </df>
+          <df name="docs">
+            <df name="api_reference">
+              <df name="C">
+              </df>
+              <df name="CXX">
+              </df>
+            </df>
+          </df>
+          <df name="test">
+          </df>
+        </df>
+        <df name="debian-changes-4.8.30-5">
+          <df name="dbinc">
+            <in>db_page.h</in>
+            <in>mutex_int.h</in>
+          </df>
+          <df name="dist">
+            <df name="aclocal_java">
+            </df>
+          </df>
+          <df name="docs">
+            <df name="api_reference">
+              <df name="C">
+              </df>
+              <df name="CXX">
+              </df>
+            </df>
+          </df>
+          <df name="test">
+          </df>
+        </df>
+        <df name="Update-config-for-arm64">
+          <df name="dist">
+          </df>
+        </df>
+      </df>
+      <df name="btree">
+        <in>bt_compact.c</in>
+        <in>bt_compare.c</in>
+        <in>bt_compress.c</in>
+        <in>bt_conv.c</in>
+        <in>bt_curadj.c</in>
+        <in>bt_cursor.c</in>
+        <in>bt_delete.c</in>
+        <in>bt_method.c</in>
+        <in>bt_open.c</in>
+        <in>bt_put.c</in>
+        <in>bt_rec.c</in>
+        <in>bt_reclaim.c</in>
+        <in>bt_recno.c</in>
+        <in>bt_rsearch.c</in>
+        <in>bt_search.c</in>
+        <in>bt_split.c</in>
+        <in>bt_stat.c</in>
+        <in>bt_upgrade.c</in>
+        <in>bt_verify.c</in>
+        <in>btree_auto.c</in>
+        <in>btree_autop.c</in>
+      </df>
+      <df name="build_brew">
+        <in>brew_db.h</in>
+        <in>clib_port.h</in>
+        <in>db.h</in>
+        <in>db_config.h</in>
+        <in>db_int.h</in>
+        <in>errno.h</in>
+      </df>
+      <df name="build_s60">
+        <in>clib_port.h</in>
+        <in>db.h</in>
+        <in>db_config.h</in>
+        <in>db_int.h</in>
+      </df>
+      <df name="build_unix">
+      </df>
+      <df name="build_vxworks">
+        <df name="db_archive">
+          <in>db_archive.c</in>
+        </df>
+        <df name="db_checkpoint">
+          <in>db_checkpoint.c</in>
+        </df>
+        <df name="db_deadlock">
+          <in>db_deadlock.c</in>
+        </df>
+        <df name="db_dump">
+          <in>db_dump.c</in>
+        </df>
+        <df name="db_hotbackup">
+          <in>db_hotbackup.c</in>
+        </df>
+        <df name="db_load">
+          <in>db_load.c</in>
+        </df>
+        <df name="db_printlog">
+          <in>db_printlog.c</in>
+        </df>
+        <df name="db_recover">
+          <in>db_recover.c</in>
+        </df>
+        <df name="db_stat">
+          <in>db_stat.c</in>
+        </df>
+        <df name="db_upgrade">
+          <in>db_upgrade.c</in>
+        </df>
+        <df name="db_verify">
+          <in>db_verify.c</in>
+        </df>
+        <df name="dbdemo">
+          <in>dbdemo.c</in>
+        </df>
+        <df name="test_micro">
+          <in>b_curalloc.c</in>
+          <in>b_curwalk.c</in>
+          <in>b_del.c</in>
+          <in>b_get.c</in>
+          <in>b_inmem.c</in>
+          <in>b_load.c</in>
+          <in>b_open.c</in>
+          <in>b_put.c</in>
+          <in>b_recover.c</in>
+          <in>b_txn.c</in>
+          <in>b_txn_write.c</in>
+          <in>b_uname.c</in>
+          <in>b_util.c</in>
+          <in>b_workload.c</in>
+          <in>b_workload.h</in>
+          <in>bench.h</in>
+          <in>test_micro.c</in>
+        </df>
+        <in>clib_port.h</in>
+        <in>db.h</in>
+        <in>db_config.h</in>
+        <in>db_config_small.h</in>
+        <in>db_cxx.h</in>
+        <in>db_int.h</in>
+      </df>
+      <df name="build_wince">
+        <in>clib_port.h</in>
+        <in>db.h</in>
+        <in>db_config.h</in>
+        <in>db_int.h</in>
+        <in>errno.h</in>
+      </df>
+      <df name="build_windows">
+        <in>clib_port.h</in>
+        <in>db.h</in>
+        <in>db_config.h</in>
+        <in>db_cxx.h</in>
+        <in>db_int.h</in>
+        <in>dbkill.cpp</in>
+        <in>dbstl_common.h</in>
+      </df>
+      <df name="clib">
+        <in>atoi.c</in>
+        <in>atol.c</in>
+        <in>getcwd.c</in>
+        <in>getopt.c</in>
+        <in>isalpha.c</in>
+        <in>isdigit.c</in>
+        <in>isprint.c</in>
+        <in>isspace.c</in>
+        <in>memcmp.c</in>
+        <in>memmove.c</in>
+        <in>printf.c</in>
+        <in>qsort.c</in>
+        <in>raise.c</in>
+        <in>rand.c</in>
+        <in>snprintf.c</in>
+        <in>strcasecmp.c</in>
+        <in>strcat.c</in>
+        <in>strchr.c</in>
+        <in>strdup.c</in>
+        <in>strerror.c</in>
+        <in>strncat.c</in>
+        <in>strncmp.c</in>
+        <in>strrchr.c</in>
+        <in>strsep.c</in>
+        <in>strtol.c</in>
+        <in>strtoul.c</in>
+        <in>time.c</in>
+      </df>
+      <df name="common">
+        <in>crypto_stub.c</in>
+        <in>db_byteorder.c</in>
+        <in>db_compint.c</in>
+        <in>db_err.c</in>
+        <in>db_getlong.c</in>
+        <in>db_idspace.c</in>
+        <in>db_log2.c</in>
+        <in>db_shash.c</in>
+        <in>dbt.c</in>
+        <in>mkpath.c</in>
+        <in>openflags.c</in>
+        <in>os_method.c</in>
+        <in>util_arg.c</in>
+        <in>util_cache.c</in>
+        <in>util_log.c</in>
+        <in>util_sig.c</in>
+        <in>zerofill.c</in>
+      </df>
+      <df name="crypto">
+        <df name="mersenne">
+          <in>mt19937db.c</in>
+        </df>
+        <df name="rijndael">
+          <in>rijndael-alg-fst.c</in>
+          <in>rijndael-alg-fst.h</in>
+          <in>rijndael-api-fst.c</in>
+          <in>rijndael-api-fst.h</in>
+        </df>
+        <in>aes_method.c</in>
+        <in>crypto.c</in>
+      </df>
+      <df name="csharp">
+        <df name="doc">
+        </df>
+        <df name="Internal">
+        </df>
+        <df name="Properties">
+        </df>
+      </df>
+      <df name="cxx">
+        <in>cxx_db.cpp</in>
+        <in>cxx_dbc.cpp</in>
+        <in>cxx_dbt.cpp</in>
+        <in>cxx_env.cpp</in>
+        <in>cxx_except.cpp</in>
+        <in>cxx_lock.cpp</in>
+        <in>cxx_logc.cpp</in>
+        <in>cxx_mpool.cpp</in>
+        <in>cxx_multi.cpp</in>
+        <in>cxx_seq.cpp</in>
+        <in>cxx_txn.cpp</in>
+      </df>
+      <df name="db">
+        <in>crdel_auto.c</in>
+        <in>crdel_autop.c</in>
+        <in>crdel_rec.c</in>
+        <in>db.c</in>
+        <in>db_am.c</in>
+        <in>db_auto.c</in>
+        <in>db_autop.c</in>
+        <in>db_cam.c</in>
+        <in>db_cds.c</in>
+        <in>db_conv.c</in>
+        <in>db_dispatch.c</in>
+        <in>db_dup.c</in>
+        <in>db_iface.c</in>
+        <in>db_join.c</in>
+        <in>db_meta.c</in>
+        <in>db_method.c</in>
+        <in>db_open.c</in>
+        <in>db_overflow.c</in>
+        <in>db_ovfl_vrfy.c</in>
+        <in>db_pr.c</in>
+        <in>db_rec.c</in>
+        <in>db_reclaim.c</in>
+        <in>db_remove.c</in>
+        <in>db_rename.c</in>
+        <in>db_ret.c</in>
+        <in>db_setid.c</in>
+        <in>db_setlsn.c</in>
+        <in>db_sort_multiple.c</in>
+        <in>db_stati.c</in>
+        <in>db_truncate.c</in>
+        <in>db_upg.c</in>
+        <in>db_upg_opd.c</in>
+        <in>db_vrfy.c</in>
+        <in>db_vrfy_stub.c</in>
+        <in>db_vrfyutil.c</in>
+        <in>partition.c</in>
+      </df>
+      <df name="db185">
+        <in>db185.c</in>
+      </df>
+      <df name="db_archive">
+        <in>db_archive.c</in>
+      </df>
+      <df name="db_checkpoint">
+        <in>db_checkpoint.c</in>
+      </df>
+      <df name="db_deadlock">
+        <in>db_deadlock.c</in>
+      </df>
+      <df name="db_dump">
+        <in>db_dump.c</in>
+      </df>
+      <df name="db_dump185">
+        <in>db_dump185.c</in>
+      </df>
+      <df name="db_hotbackup">
+        <in>db_hotbackup.c</in>
+      </df>
+      <df name="db_load">
+        <in>db_load.c</in>
+      </df>
+      <df name="db_printlog">
+        <in>db_printlog.c</in>
+      </df>
+      <df name="db_recover">
+        <in>db_recover.c</in>
+      </df>
+      <df name="db_sql">
+        <df name="example">
+        </df>
+        <df name="sqlite">
+          <in>keywordhash.h</in>
+          <in>parse.c</in>
+          <in>parse.h</in>
+          <in>sqlite3.h</in>
+          <in>sqliteInt.h</in>
+          <in>sqliteLimit.h</in>
+          <in>sqlprintf.c</in>
+        </df>
+        <in>buildpt.c</in>
+        <in>db_sql.c</in>
+        <in>db_sql.h</in>
+        <in>generate.c</in>
+        <in>generate_test.c</in>
+        <in>generate_verification.c</in>
+        <in>generation.h</in>
+        <in>generation_utils.c</in>
+        <in>hint_comment.c</in>
+        <in>parsefuncs.c</in>
+        <in>preparser.c</in>
+        <in>tokenize.c</in>
+        <in>utils.c</in>
+      </df>
+      <df name="db_stat">
+        <in>db_stat.c</in>
+      </df>
+      <df name="db_upgrade">
+        <in>db_upgrade.c</in>
+      </df>
+      <df name="db_verify">
+        <in>db_verify.c</in>
+      </df>
+      <df name="dbinc">
+        <in>atomic.h</in>
+        <in>btree.h</in>
+        <in>clock.h</in>
+        <in>crypto.h</in>
+        <in>cxx_int.h</in>
+        <in>db_am.h</in>
+        <in>db_dispatch.h</in>
+        <in>db_join.h</in>
+        <in>db_page.h</in>
+        <in>db_swap.h</in>
+        <in>db_upgrade.h</in>
+        <in>db_verify.h</in>
+        <in>debug.h</in>
+        <in>fop.h</in>
+        <in>globals.h</in>
+        <in>hash.h</in>
+        <in>hmac.h</in>
+        <in>lock.h</in>
+        <in>log.h</in>
+        <in>mp.h</in>
+        <in>mutex.h</in>
+        <in>mutex_int.h</in>
+        <in>os.h</in>
+        <in>partition.h</in>
+        <in>qam.h</in>
+        <in>queue.h</in>
+        <in>region.h</in>
+        <in>rep.h</in>
+        <in>repmgr.h</in>
+        <in>shqueue.h</in>
+        <in>tcl_db.h</in>
+        <in>txn.h</in>
+        <in>win_db.h</in>
+      </df>
+      <df name="dbinc_auto">
+        <in>btree_auto.h</in>
+        <in>btree_ext.h</in>
+        <in>clib_ext.h</in>
+        <in>common_ext.h</in>
+        <in>crdel_auto.h</in>
+        <in>crypto_ext.h</in>
+        <in>db_auto.h</in>
+        <in>db_ext.h</in>
+        <in>dbreg_auto.h</in>
+        <in>dbreg_ext.h</in>
+        <in>env_ext.h</in>
+        <in>fileops_auto.h</in>
+        <in>fileops_ext.h</in>
+        <in>hash_auto.h</in>
+        <in>hash_ext.h</in>
+        <in>hmac_ext.h</in>
+        <in>lock_ext.h</in>
+        <in>log_ext.h</in>
+        <in>mp_ext.h</in>
+        <in>mutex_ext.h</in>
+        <in>os_ext.h</in>
+        <in>qam_auto.h</in>
+        <in>qam_ext.h</in>
+        <in>rep_auto.h</in>
+        <in>rep_ext.h</in>
+        <in>repmgr_auto.h</in>
+        <in>repmgr_ext.h</in>
+        <in>sequence_ext.h</in>
+        <in>tcl_ext.h</in>
+        <in>txn_auto.h</in>
+        <in>txn_ext.h</in>
+      </df>
+      <df name="dbm">
+        <in>dbm.c</in>
+      </df>
+      <df name="dbreg">
+        <in>dbreg.c</in>
+        <in>dbreg_auto.c</in>
+        <in>dbreg_autop.c</in>
+        <in>dbreg_rec.c</in>
+        <in>dbreg_stat.c</in>
+        <in>dbreg_util.c</in>
+      </df>
+      <df name="debian">
+        <df name="manpages">
+        </df>
+        <df name="patches">
+        </df>
+        <df name="source">
+        </df>
+      </df>
+      <df name="dist">
+        <df name="aclocal">
+        </df>
+        <df name="aclocal_java">
+        </df>
+        <df name="brew">
+          <in>brew_posix.h</in>
+        </df>
+        <df name="s60">
+        </df>
+        <df name="template">
+          <in>db_server_proc</in>
+          <in>gen_client_ret</in>
+          <in>rec_btree</in>
+          <in>rec_crdel</in>
+          <in>rec_db</in>
+          <in>rec_dbreg</in>
+          <in>rec_fileops</in>
+          <in>rec_hash</in>
+          <in>rec_qam</in>
+          <in>rec_rep</in>
+          <in>rec_txn</in>
+          <in>rec_utemp</in>
+        </df>
+        <df name="vx_2.0">
+        </df>
+        <df name="vx_2.2">
+        </df>
+        <df name="vx_6">
+        </df>
+        <df name="vx_setup">
+        </df>
+        <df name="win_projects">
+        </df>
+        <df name="winmsi">
+          <df name="images">
+          </df>
+        </df>
+        <in>api_flags.c</in>
+        <in>errno.h</in>
+      </df>
+      <df name="docs">
+        <df name="api_reference">
+          <df name="C">
+          </df>
+          <df name="CXX">
+          </df>
+          <df name="STL">
+          </df>
+          <df name="TCL">
+          </df>
+        </df>
+        <df name="articles">
+          <df name="inmemory">
+            <df name="C">
+            </df>
+          </df>
+        </df>
+        <df name="collections">
+          <df name="tutorial">
+          </df>
+        </df>
+        <df name="csharp">
+          <df name="fti">
+          </df>
+          <df name="html">
+          </df>
+          <df name="icons">
+          </df>
+          <df name="scripts">
+          </df>
+          <df name="styles">
+            <df name="Whidbey">
+            </df>
+          </df>
+        </df>
+        <df name="gsg">
+          <df name="C">
+          </df>
+          <df name="CXX">
+          </df>
+          <df name="JAVA">
+          </df>
+        </df>
+        <df name="gsg_db_rep">
+          <df name="C">
+          </df>
+          <df name="CXX">
+          </df>
+          <df name="JAVA">
+          </df>
+        </df>
+        <df name="gsg_txn">
+          <df name="C">
+          </df>
+          <df name="CXX">
+          </df>
+          <df name="JAVA">
+          </df>
+        </df>
+        <df name="java">
+          <df name="com">
+            <df name="sleepycat">
+              <df name="bind">
+                <df name="class-use">
+                </df>
+                <df name="serial">
+                  <df name="class-use">
+                  </df>
+                </df>
+                <df name="tuple">
+                  <df name="class-use">
+                  </df>
+                </df>
+              </df>
+              <df name="collections">
+                <df name="class-use">
+                </df>
+              </df>
+              <df name="db">
+                <df name="class-use">
+                </df>
+              </df>
+              <df name="persist">
+                <df name="class-use">
+                </df>
+                <df name="evolve">
+                  <df name="class-use">
+                  </df>
+                </df>
+                <df name="model">
+                  <df name="class-use">
+                  </df>
+                </df>
+                <df name="raw">
+                  <df name="class-use">
+                  </df>
+                </df>
+              </df>
+              <df name="util">
+                <df name="class-use">
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="resources">
+          </df>
+        </df>
+        <df name="license">
+        </df>
+        <df name="porting">
+        </df>
+        <df name="programmer_reference">
+        </df>
+      </df>
+      <df name="docs_src">
+        <df name="images">
+        </df>
+        <df name="ref">
+          <df name="arch">
+          </df>
+          <df name="install">
+            <df name="ARCHIVE">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="env">
+        <in>env_alloc.c</in>
+        <in>env_config.c</in>
+        <in>env_failchk.c</in>
+        <in>env_file.c</in>
+        <in>env_globals.c</in>
+        <in>env_method.c</in>
+        <in>env_name.c</in>
+        <in>env_open.c</in>
+        <in>env_recover.c</in>
+        <in>env_region.c</in>
+        <in>env_register.c</in>
+        <in>env_sig.c</in>
+        <in>env_stat.c</in>
+      </df>
+      <df name="examples_c">
+        <df name="csv">
+          <in>DbRecord.c</in>
+          <in>code.c</in>
+          <in>csv.h</in>
+          <in>csv_extern.h</in>
+          <in>db.c</in>
+          <in>load.c</in>
+          <in>load_main.c</in>
+          <in>query.c</in>
+          <in>query_main.c</in>
+          <in>util.c</in>
+        </df>
+        <df name="ex_apprec">
+          <in>ex_apprec.c</in>
+          <in>ex_apprec.h</in>
+          <in>ex_apprec_auto.c</in>
+          <in>ex_apprec_auto.h</in>
+          <in>ex_apprec_autop.c</in>
+          <in>ex_apprec_rec.c</in>
+          <in>ex_apprec_template</in>
+        </df>
+        <df name="ex_rep">
+          <df name="base">
+            <in>rep_base.c</in>
+            <in>rep_base.h</in>
+            <in>rep_msg.c</in>
+            <in>rep_net.c</in>
+          </df>
+          <df name="common">
+            <in>rep_common.c</in>
+            <in>rep_common.h</in>
+          </df>
+          <df name="mgr">
+            <in>rep_mgr.c</in>
+          </df>
+        </df>
+        <df name="ex_rep_gsg">
+          <in>rep_mgr_gsg.c</in>
+          <in>simple_txn.c</in>
+        </df>
+        <df name="getting_started">
+          <in>example_database_load.c</in>
+          <in>example_database_read.c</in>
+          <in>gettingstarted_common.c</in>
+          <in>gettingstarted_common.h</in>
+        </df>
+        <df name="txn_guide">
+          <in>txn_guide.c</in>
+          <in>txn_guide_inmemory.c</in>
+        </df>
+        <in>bench_001.c</in>
+        <in>ex_access.c</in>
+        <in>ex_btrec.c</in>
+        <in>ex_dbclient.c</in>
+        <in>ex_env.c</in>
+        <in>ex_lock.c</in>
+        <in>ex_mpool.c</in>
+        <in>ex_sequence.c</in>
+        <in>ex_stream.c</in>
+        <in>ex_thread.c</in>
+        <in>ex_tpcb.c</in>
+      </df>
+      <df name="examples_csharp">
+        <df name="ex_access">
+          <df name="Properties">
+          </df>
+        </df>
+        <df name="ex_btrec">
+          <df name="Properties">
+          </df>
+        </df>
+        <df name="ex_env">
+          <df name="Properties">
+          </df>
+        </df>
+        <df name="ex_lock">
+          <df name="Properties">
+          </df>
+        </df>
+        <df name="ex_repquote">
+          <df name="Properties">
+          </df>
+        </df>
+        <df name="ex_sequence">
+          <df name="Properties">
+          </df>
+        </df>
+        <df name="ex_txn">
+          <df name="Properties">
+          </df>
+        </df>
+      </df>
+      <df name="examples_cxx">
+        <df name="excxx_repquote">
+          <in>RepConfigInfo.cpp</in>
+          <in>RepConfigInfo.h</in>
+          <in>RepQuoteExample.cpp</in>
+          <in>dbc_auto.h</in>
+        </df>
+        <df name="excxx_repquote_gsg">
+          <in>RepConfigInfo.h</in>
+          <in>RepMgrGSG.cpp</in>
+          <in>SimpleConfigInfo.h</in>
+          <in>SimpleTxn.cpp</in>
+        </df>
+        <df name="getting_started">
+          <in>MyDb.cpp</in>
+          <in>MyDb.hpp</in>
+          <in>excxx_example_database_load.cpp</in>
+          <in>excxx_example_database_read.cpp</in>
+          <in>gettingStartedCommon.hpp</in>
+        </df>
+        <df name="txn_guide">
+          <in>TxnGuide.cpp</in>
+          <in>TxnGuideInMemory.cpp</in>
+        </df>
+        <df name="wce_tpcb">
+          <in>TpcbExample.cpp</in>
+          <in>TpcbExample.h</in>
+          <in>TpcbUI.cpp</in>
+          <in>newres.h</in>
+          <in>resource.h</in>
+        </df>
+        <in>AccessExample.cpp</in>
+        <in>BtRecExample.cpp</in>
+        <in>EnvExample.cpp</in>
+        <in>LockExample.cpp</in>
+        <in>MpoolExample.cpp</in>
+        <in>SequenceExample.cpp</in>
+        <in>TpcbExample.cpp</in>
+      </df>
+      <df name="examples_java">
+        <df name="src">
+          <df name="collections">
+            <df name="access">
+            </df>
+            <df name="hello">
+            </df>
+            <df name="ship">
+              <df name="basic">
+              </df>
+              <df name="entity">
+              </df>
+              <df name="factory">
+              </df>
+              <df name="index">
+              </df>
+              <df name="marshal">
+              </df>
+              <df name="sentity">
+              </df>
+              <df name="tuple">
+              </df>
+            </df>
+          </df>
+          <df name="db">
+            <df name="GettingStarted">
+            </df>
+            <df name="repquote">
+            </df>
+            <df name="repquote_gsg">
+            </df>
+            <df name="txn">
+            </df>
+          </df>
+          <df name="persist">
+            <df name="gettingStarted">
+            </df>
+            <df name="txn">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="examples_stl">
+        <df name="repquote">
+          <in>StlRepConfigInfo.cpp</in>
+          <in>StlRepConfigInfo.h</in>
+          <in>StlRepQuoteExample.cpp</in>
+        </df>
+        <in>StlAccessExample.cpp</in>
+        <in>StlTpcbExample.cpp</in>
+        <in>StlTransactionGuideExample.cpp</in>
+      </df>
+      <df name="fileops">
+        <in>fileops_auto.c</in>
+        <in>fileops_autop.c</in>
+        <in>fop_basic.c</in>
+        <in>fop_rec.c</in>
+        <in>fop_util.c</in>
+      </df>
+      <df name="hash">
+        <in>hash.c</in>
+        <in>hash_auto.c</in>
+        <in>hash_autop.c</in>
+        <in>hash_conv.c</in>
+        <in>hash_dup.c</in>
+        <in>hash_func.c</in>
+        <in>hash_meta.c</in>
+        <in>hash_method.c</in>
+        <in>hash_open.c</in>
+        <in>hash_page.c</in>
+        <in>hash_rec.c</in>
+        <in>hash_reclaim.c</in>
+        <in>hash_stat.c</in>
+        <in>hash_stub.c</in>
+        <in>hash_upgrade.c</in>
+        <in>hash_verify.c</in>
+      </df>
+      <df name="hmac">
+        <in>hmac.c</in>
+        <in>sha1.c</in>
+      </df>
+      <df name="hsearch">
+        <in>hsearch.c</in>
+      </df>
+      <df name="java">
+        <df name="doc">
+        </df>
+        <df name="ext">
+          <df name="com">
+            <df name="sleepycat">
+              <df name="persist">
+                <df name="model">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <df name="com">
+            <df name="sleepycat">
+              <df name="asm">
+              </df>
+              <df name="bind">
+                <df name="serial">
+                </df>
+                <df name="tuple">
+                </df>
+              </df>
+              <df name="collections">
+              </df>
+              <df name="compat">
+              </df>
+              <df name="db">
+                <df name="internal">
+                </df>
+              </df>
+              <df name="persist">
+                <df name="evolve">
+                </df>
+                <df name="impl">
+                </df>
+                <df name="model">
+                </df>
+                <df name="raw">
+                </df>
+              </df>
+              <df name="util">
+                <df name="keyrange">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="libdb_csharp">
+        <in>db.i</in>
+        <in>db_csharp_wrap.c</in>
+      </df>
+      <df name="libdb_java">
+        <in>db.i</in>
+        <in>db_java.i</in>
+        <in>db_java_wrap.c</in>
+        <in>java_callbacks.i</in>
+        <in>java_except.i</in>
+        <in>java_stat.i</in>
+        <in>java_stat_auto.c</in>
+        <in>java_typemaps.i</in>
+        <in>java_util.i</in>
+      </df>
+      <df name="lock">
+        <in>lock.c</in>
+        <in>lock_deadlock.c</in>
+        <in>lock_failchk.c</in>
+        <in>lock_id.c</in>
+        <in>lock_list.c</in>
+        <in>lock_method.c</in>
+        <in>lock_region.c</in>
+        <in>lock_stat.c</in>
+        <in>lock_stub.c</in>
+        <in>lock_timer.c</in>
+        <in>lock_util.c</in>
+      </df>
+      <df name="log">
+        <in>log.c</in>
+        <in>log_archive.c</in>
+        <in>log_compare.c</in>
+        <in>log_debug.c</in>
+        <in>log_get.c</in>
+        <in>log_method.c</in>
+        <in>log_put.c</in>
+        <in>log_stat.c</in>
+      </df>
+      <df name="mod_db4">
+        <in>mm_hash.c</in>
+        <in>mm_hash.h</in>
+        <in>mod_db4.c</in>
+        <in>mod_db4_export.h</in>
+        <in>sem_utils.c</in>
+        <in>sem_utils.h</in>
+        <in>skiplist.c</in>
+        <in>skiplist.h</in>
+        <in>utils.c</in>
+        <in>utils.h</in>
+      </df>
+      <df name="mp">
+        <in>mp_alloc.c</in>
+        <in>mp_bh.c</in>
+        <in>mp_fget.c</in>
+        <in>mp_fmethod.c</in>
+        <in>mp_fopen.c</in>
+        <in>mp_fput.c</in>
+        <in>mp_fset.c</in>
+        <in>mp_method.c</in>
+        <in>mp_mvcc.c</in>
+        <in>mp_region.c</in>
+        <in>mp_register.c</in>
+        <in>mp_resize.c</in>
+        <in>mp_stat.c</in>
+        <in>mp_sync.c</in>
+        <in>mp_trickle.c</in>
+      </df>
+      <df name="mutex">
+        <in>mut_alloc.c</in>
+        <in>mut_failchk.c</in>
+        <in>mut_fcntl.c</in>
+        <in>mut_method.c</in>
+        <in>mut_pthread.c</in>
+        <in>mut_region.c</in>
+        <in>mut_stat.c</in>
+        <in>mut_stub.c</in>
+        <in>mut_tas.c</in>
+        <in>mut_win32.c</in>
+        <in>test_mutex.c</in>
+        <in>uts4_cc.s</in>
+      </df>
+      <df name="os">
+        <in>os_abort.c</in>
+        <in>os_abs.c</in>
+        <in>os_addrinfo.c</in>
+        <in>os_alloc.c</in>
+        <in>os_clock.c</in>
+        <in>os_config.c</in>
+        <in>os_cpu.c</in>
+        <in>os_ctime.c</in>
+        <in>os_dir.c</in>
+        <in>os_errno.c</in>
+        <in>os_fid.c</in>
+        <in>os_flock.c</in>
+        <in>os_fsync.c</in>
+        <in>os_getenv.c</in>
+        <in>os_handle.c</in>
+        <in>os_map.c</in>
+        <in>os_mkdir.c</in>
+        <in>os_open.c</in>
+        <in>os_pid.c</in>
+        <in>os_rename.c</in>
+        <in>os_root.c</in>
+        <in>os_rpath.c</in>
+        <in>os_rw.c</in>
+        <in>os_seek.c</in>
+        <in>os_stack.c</in>
+        <in>os_stat.c</in>
+        <in>os_tmpdir.c</in>
+        <in>os_truncate.c</in>
+        <in>os_uid.c</in>
+        <in>os_unlink.c</in>
+        <in>os_yield.c</in>
+      </df>
+      <df name="os_brew">
+        <in>ctime.c</in>
+        <in>fclose.c</in>
+        <in>fgetc.c</in>
+        <in>fgets.c</in>
+        <in>fopen.c</in>
+        <in>fwrite.c</in>
+        <in>getcwd.c</in>
+        <in>globals.c</in>
+        <in>localtime.c</in>
+        <in>os_abort.c</in>
+        <in>os_abs.c</in>
+        <in>os_clock.c</in>
+        <in>os_config.c</in>
+        <in>os_dir.c</in>
+        <in>os_errno.c</in>
+        <in>os_handle.c</in>
+        <in>os_mkdir.c</in>
+        <in>os_open.c</in>
+        <in>os_pid.c</in>
+        <in>os_rename.c</in>
+        <in>os_rw.c</in>
+        <in>os_seek.c</in>
+        <in>os_stat.c</in>
+        <in>os_truncate.c</in>
+        <in>os_unlink.c</in>
+        <in>os_yield.c</in>
+      </df>
+      <df name="os_qnx">
+        <in>os_qnx_fsync.c</in>
+        <in>os_qnx_open.c</in>
+      </df>
+      <df name="os_s60">
+        <in>os_config.c</in>
+      </df>
+      <df name="os_vxworks">
+        <in>os_vx_abs.c</in>
+        <in>os_vx_config.c</in>
+        <in>os_vx_map.c</in>
+        <in>os_vx_rpath.c</in>
+        <in>os_vx_yield.c</in>
+      </df>
+      <df name="os_windows">
+        <in>ce_ctime.c</in>
+        <in>os_abs.c</in>
+        <in>os_clock.c</in>
+        <in>os_config.c</in>
+        <in>os_cpu.c</in>
+        <in>os_dir.c</in>
+        <in>os_errno.c</in>
+        <in>os_fid.c</in>
+        <in>os_flock.c</in>
+        <in>os_fsync.c</in>
+        <in>os_getenv.c</in>
+        <in>os_handle.c</in>
+        <in>os_map.c</in>
+        <in>os_mkdir.c</in>
+        <in>os_open.c</in>
+        <in>os_rename.c</in>
+        <in>os_rw.c</in>
+        <in>os_seek.c</in>
+        <in>os_stat.c</in>
+        <in>os_truncate.c</in>
+        <in>os_unlink.c</in>
+        <in>os_yield.c</in>
+      </df>
+      <df name="perl">
+        <df name="BerkeleyDB">
+          <df name="BerkeleyDB">
+          </df>
+          <df name="hints">
+          </df>
+          <df name="patches">
+          </df>
+          <df name="t">
+            <df name="Test">
+            </df>
+          </df>
+          <in>constants.h</in>
+          <in>ppport.h</in>
+        </df>
+        <df name="DB_File">
+          <df name="hints">
+          </df>
+          <df name="patches">
+          </df>
+          <df name="t">
+          </df>
+          <in>fallback.h</in>
+          <in>ppport.h</in>
+          <in>version.c</in>
+        </df>
+      </df>
+      <df name="php_db4">
+        <df name="samples">
+        </df>
+        <in>db4.cpp</in>
+        <in>php_db4.h</in>
+      </df>
+      <df name="qam">
+        <in>qam.c</in>
+        <in>qam_auto.c</in>
+        <in>qam_autop.c</in>
+        <in>qam_conv.c</in>
+        <in>qam_files.c</in>
+        <in>qam_method.c</in>
+        <in>qam_open.c</in>
+        <in>qam_rec.c</in>
+        <in>qam_stat.c</in>
+        <in>qam_stub.c</in>
+        <in>qam_upgrade.c</in>
+        <in>qam_verify.c</in>
+      </df>
+      <df name="rep">
+        <in>rep_auto.c</in>
+        <in>rep_backup.c</in>
+        <in>rep_elect.c</in>
+        <in>rep_lease.c</in>
+        <in>rep_log.c</in>
+        <in>rep_method.c</in>
+        <in>rep_record.c</in>
+        <in>rep_region.c</in>
+        <in>rep_stat.c</in>
+        <in>rep_stub.c</in>
+        <in>rep_util.c</in>
+        <in>rep_verify.c</in>
+      </df>
+      <df name="repmgr">
+        <in>repmgr_auto.c</in>
+        <in>repmgr_elect.c</in>
+        <in>repmgr_method.c</in>
+        <in>repmgr_msg.c</in>
+        <in>repmgr_net.c</in>
+        <in>repmgr_posix.c</in>
+        <in>repmgr_queue.c</in>
+        <in>repmgr_sel.c</in>
+        <in>repmgr_stat.c</in>
+        <in>repmgr_stub.c</in>
+        <in>repmgr_util.c</in>
+        <in>repmgr_windows.c</in>
+      </df>
+      <df name="sequence">
+        <in>seq_stat.c</in>
+        <in>sequence.c</in>
+      </df>
+      <df name="stl">
+        <in>dbstl_base_iterator.h</in>
+        <in>dbstl_container.cpp</in>
+        <in>dbstl_container.h</in>
+        <in>dbstl_dbc.h</in>
+        <in>dbstl_dbt.h</in>
+        <in>dbstl_element_ref.h</in>
+        <in>dbstl_exception.h</in>
+        <in>dbstl_inner_utility.h</in>
+        <in>dbstl_map.h</in>
+        <in>dbstl_resource_manager.cpp</in>
+        <in>dbstl_resource_manager.h</in>
+        <in>dbstl_set.h</in>
+        <in>dbstl_utility.h</in>
+        <in>dbstl_vector.h</in>
+      </df>
+      <df name="tcl">
+        <df name="docs">
+        </df>
+        <in>tcl_compat.c</in>
+        <in>tcl_db.c</in>
+        <in>tcl_db_pkg.c</in>
+        <in>tcl_dbcursor.c</in>
+        <in>tcl_env.c</in>
+        <in>tcl_internal.c</in>
+        <in>tcl_lock.c</in>
+        <in>tcl_log.c</in>
+        <in>tcl_mp.c</in>
+        <in>tcl_mutex.c</in>
+        <in>tcl_rep.c</in>
+        <in>tcl_seq.c</in>
+        <in>tcl_txn.c</in>
+        <in>tcl_util.c</in>
+      </df>
+      <df name="test">
+        <df name="scr001">
+        </df>
+        <df name="scr002">
+        </df>
+        <df name="scr003">
+        </df>
+        <df name="scr004">
+        </df>
+        <df name="scr005">
+        </df>
+        <df name="scr006">
+        </df>
+        <df name="scr007">
+        </df>
+        <df name="scr008">
+        </df>
+        <df name="scr009">
+        </df>
+        <df name="scr010">
+        </df>
+        <df name="scr011">
+        </df>
+        <df name="scr012">
+        </df>
+        <df name="scr013">
+        </df>
+        <df name="scr014">
+        </df>
+        <df name="scr015">
+          <in>TestConstruct01.cpp</in>
+          <in>TestGetSetMethods.cpp</in>
+          <in>TestKeyRange.cpp</in>
+          <in>TestLogc.cpp</in>
+          <in>TestSimpleAccess.cpp</in>
+          <in>TestTruncate.cpp</in>
+        </df>
+        <df name="scr016">
+          <df name="src">
+            <df name="com">
+              <df name="sleepycat">
+                <df name="db">
+                  <df name="test">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="scr017">
+          <in>t.c</in>
+        </df>
+        <df name="scr018">
+          <in>t.c</in>
+        </df>
+        <df name="scr019">
+        </df>
+        <df name="scr020">
+        </df>
+        <df name="scr021">
+          <in>t.c</in>
+        </df>
+        <df name="scr022">
+        </df>
+        <df name="scr023">
+          <in>q.c</in>
+        </df>
+        <df name="scr024">
+          <df name="src">
+            <df name="com">
+              <df name="sleepycat">
+                <df name="bind">
+                  <df name="serial">
+                    <df name="test">
+                    </df>
+                  </df>
+                  <df name="test">
+                  </df>
+                  <df name="tuple">
+                    <df name="test">
+                    </df>
+                  </df>
+                </df>
+                <df name="collections">
+                  <df name="test">
+                    <df name="serial">
+                    </df>
+                  </df>
+                </df>
+                <df name="db">
+                  <df name="util">
+                  </df>
+                </df>
+                <df name="persist">
+                  <df name="test">
+                  </df>
+                </df>
+                <df name="util">
+                  <df name="test">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="scr025">
+          <in>TestMulti.cpp</in>
+        </df>
+        <df name="scr026">
+        </df>
+        <df name="scr027">
+        </df>
+        <df name="scr028">
+          <in>t.c</in>
+        </df>
+        <df name="scr029">
+          <in>t.c</in>
+        </df>
+        <df name="scr030">
+        </df>
+        <df name="scr031">
+        </df>
+        <df name="scr032">
+        </df>
+        <df name="scr033">
+        </df>
+        <df name="scr034">
+        </df>
+        <df name="scr035">
+        </df>
+        <df name="scr037">
+        </df>
+        <df name="scr038">
+          <df name="data">
+          </df>
+        </df>
+      </df>
+      <df name="test_micro">
+        <df name="configs">
+        </df>
+        <df name="source">
+          <in>b_curalloc.c</in>
+          <in>b_curwalk.c</in>
+          <in>b_del.c</in>
+          <in>b_get.c</in>
+          <in>b_inmem.c</in>
+          <in>b_latch.c</in>
+          <in>b_load.c</in>
+          <in>b_open.c</in>
+          <in>b_put.c</in>
+          <in>b_recover.c</in>
+          <in>b_txn.c</in>
+          <in>b_txn_write.c</in>
+          <in>b_uname.c</in>
+          <in>b_util.c</in>
+          <in>b_workload.c</in>
+          <in>b_workload.h</in>
+          <in>bench.h</in>
+          <in>test_micro.c</in>
+        </df>
+      </df>
+      <df name="test_stl">
+        <df name="base">
+          <in>ptype.h</in>
+          <in>test.h</in>
+          <in>test_assoc.h</in>
+          <in>test_dbstl.cpp</in>
+          <in>test_mt.h</in>
+          <in>test_util.cpp</in>
+          <in>test_util.h</in>
+          <in>test_vector.h</in>
+        </df>
+      </df>
+      <df name="txn">
+        <in>txn.c</in>
+        <in>txn_auto.c</in>
+        <in>txn_autop.c</in>
+        <in>txn_chkpt.c</in>
+        <in>txn_failchk.c</in>
+        <in>txn_method.c</in>
+        <in>txn_rec.c</in>
+        <in>txn_recover.c</in>
+        <in>txn_region.c</in>
+        <in>txn_stat.c</in>
+        <in>txn_util.c</in>
+      </df>
+      <in>.ignore</in>
+    </df>
+  </logicalFolder>
+  <projectmakefile></projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

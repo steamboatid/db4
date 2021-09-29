@@ -61,6 +61,7 @@ mockeagain.so
 # netbeans project
 nbproject/*
 nbproject
+dkbuild.log
 
 # debian packaging
 debian/.debhelper/*
