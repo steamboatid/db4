@@ -59,6 +59,8 @@ mockeagain.so
 
 
 # netbeans project
+/nbproject/*/*
+nbproject/*/*
 nbproject/*
 nbproject
 dkbuild.log

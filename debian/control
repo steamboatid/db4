@@ -20,7 +20,7 @@ Description: Berkeley v4.8 Database Documentation [html]
 Package: libdb4.8-dev
 Architecture: any
 Section: libdevel
-Priority: extra
+Priority: important
 Depends: libdb4.8 (= ${binary:Version})
 Suggests: db4.8-doc
 Conflicts: libdb1-dev, libdb2-dev, libdb3-dev, libdb4.2-dev, libdb4.3-dev, libdb4.4-dev, libdb4.5-dev, libdb4.6-dev, libdb4.7-dev
@@ -32,7 +32,7 @@ Package: libdb4.8
 Architecture: any
 Conflicts: libdb2 (<< 2:2.7.7-3)
 Section: libs
-Priority: standard
+Priority: important
 Depends: ${shlibs:Depends}
 Description: Berkeley v4.8 Database Libraries [runtime]
  This is the runtime package for programs that use the v4.8 Berkeley
@@ -65,7 +65,7 @@ Architecture: any
 Depends: ${shlibs:Depends}
 Conflicts: libdb2++ (<< 2:2.7.7-3)
 Section: libs
-Priority: optional
+Priority: important
 Description: Berkeley v4.8 Database Libraries for C++ [runtime]
  This is the runtime package for programs that use the Berkeley v4.8
  database library.  This is only for programs which use the C++ interface.
@@ -75,7 +75,7 @@ Architecture: any
 Provides: libdb++-dev
 Conflicts: libdb2++-dev, libdb++-dev, libdb3++-dev
 Section: libdevel
-Priority: extra
+Priority: important
 Depends: libdb4.8++ (= ${binary:Version}), libdb4.8-dev (= ${binary:Version})
 Description: Berkeley v4.8 Database Libraries for C++ [development]
  This is the development package which contains headers and static
