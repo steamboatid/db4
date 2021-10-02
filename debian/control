@@ -100,3 +100,11 @@ Depends: libdb4.8 (= ${binary:Version})
 Description: Berkeley v4.8 Database Libraries [debug]
  This package provides the debug symbols for the Berkeley v4.8 database
  library.
+
+Package: libdb-dev
+Architecture: any
+Section: libdevel
+Priority: important
+Depends: libdb4.8 (= ${binary:Version}), libdb4.8-dev (= ${binary:Version}), libdb4.8++ (= ${binary:Version}), libdb4.8++-dev (= ${binary:Version})
+Description: Berkeley v4.8 Database Libraries [dummy metapackage]
+ This package is dummy package to install all development packages
