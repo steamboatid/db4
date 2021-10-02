@@ -1,1 +1,15 @@
 /dist/
+
+*.deps
+*.libs
+*.o
+*.lo
+build*
+autom4te.cache
+autom4te.cache/*
+.cquery
+.vscode/*
+
+# netbeans project
+nbproject/*
+nbproject
