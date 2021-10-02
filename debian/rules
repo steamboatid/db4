@@ -50,7 +50,7 @@ CONFIGURE_SWITCHES =    --prefix=/usr \
 	--enable-tcl \
 	--with-tcl=/usr/lib/tcl8.6
 
-DB_BINARY_PKGS = libdb4.8 libdb4.8-dev libdb4.8++ libdb4.8++-dev libdb4.8-tcl db4.8-util libdb4.8-dbg
+DB_BINARY_PKGS = libdb-dev libdb4.8 libdb4.8-dev libdb4.8++ libdb4.8++-dev libdb4.8-tcl db4.8-util libdb4.8-dbg
 
 ifeq (zx86_64-linux-gnuz,z$(DEB_HOST_GNU_TYPE)z)
 CONFIGURE_SWITCHES += --with-mutex=POSIX/pthreads/library
@@ -98,8 +98,8 @@ clean:
 	$(checkdir)
 	rm -rf obj
 	rm -f build install-stamp
-	-rm -rf debian/tmp debian/$(package)* debian/lib$(package)* core
-	-rm -f debian/substvars.*
+	rm -rf debian/tmp debian/$(package)* debian/lib$(package)* core
+	rm -f debian/substvars.*
 	rm -rf debian/libdb*
 
 install-stamp: build
