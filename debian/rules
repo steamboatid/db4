@@ -50,7 +50,7 @@ CONFIGURE_SWITCHES =    --prefix=/usr \
 	--enable-tcl \
 	--with-tcl=/usr/lib/tcl8.6
 
-DB_BINARY_PKGS = libdb-dev libdb4.8 libdb4.8-dev libdb4.8++ libdb4.8++-dev libdb4.8-tcl db4.8-util libdb4.8-dbg
+DB_BINARY_PKGS = libdb-dev libdb4.8 libdb4.8-dev libdb4.8++ libdb4.8++-dev libdb4.8-tcl db4.8-util
 
 ifeq (zx86_64-linux-gnuz,z$(DEB_HOST_GNU_TYPE)z)
 CONFIGURE_SWITCHES += --with-mutex=POSIX/pthreads/library
@@ -142,20 +142,13 @@ binary-arch: checkroot build install-stamp
 		debian/lib$(package)/usr/lib debian/lib$(package)++/usr/lib \
 		debian/lib$(package)++-dev/usr/include \
 		debian/lib$(package)++-dev/usr/lib \
-		debian/lib$(package)-tcl/usr/lib \
-		debian/lib$(package)-dbg/usr/lib/debug/usr/lib
-
-	objcopy --only-keep-debug debian/tmp/usr/lib/libdb-$(bdbversion).so \
-		debian/lib$(package)-dbg/usr/lib/debug/usr/lib/libdb-$(bdbversion).so.debug
+		debian/lib$(package)-tcl/usr/lib
 
 ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
 	strip --remove-section=.note --remove-section=.comment \
 		debian/tmp/usr/lib/*.so debian/tmp/usr/bin/*
 	strip --strip-debug debian/tmp/usr/lib/*.a
 endif
-
-	objcopy --add-gnu-debuglink=debian/lib$(package)-dbg/usr/lib/debug/usr/lib/libdb-$(bdbversion).so.debug \
-		debian/tmp/usr/lib/libdb-$(bdbversion).so
 
 	chmod 644 debian/tmp/usr/lib/*.so debian/tmp/usr/include/*.h
 	chmod 755 debian/tmp/usr/bin/*
