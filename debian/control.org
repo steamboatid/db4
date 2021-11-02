@@ -92,6 +92,15 @@ Description: Berkeley v4.8 Database Libraries for Tcl [module]
  This package provides a Tcl module suitable for accessing Berkeley v4.8
  databases from within Tcl programs.
 
+Package: libdb4.8-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: libdb4.8 (= ${binary:Version})
+Description: Berkeley v4.8 Database Libraries [debug]
+ This package provides the debug symbols for the Berkeley v4.8 database
+ library.
+
 Package: libdb-dev
 Architecture: any
 Section: libdevel

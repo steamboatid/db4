@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
-    <df root="/tb2/root/github/db4.8" name="0">
+    <df root="/tb2/root/github/db4" name="0">
       <df name=".pc">
         <df name="0002-atomic_compare_exchange.patch">
           <df name="dbinc">
@@ -1375,7 +1375,6 @@
         <in>txn_stat.c</in>
         <in>txn_util.c</in>
       </df>
-      <in>.ignore</in>
     </df>
   </logicalFolder>
   <projectmakefile></projectmakefile>
