@@ -1,0 +1,228 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+#----------------- dkverbosev2
+DH_VERBOSE=1
+export DH_VERBOSE
+export DH_OPTIONS
+export DEB_BUILD_OPTIONS
+export DEB_BUILD_PROFILES
+export DPKG_EXPORT_BUILDFLAGS
+export SHELL
+export DEB_CFLAGS_MAINT_APPEND
+export DEB_LDFLAGS_MAINT_APPEND
+#----------------- end
+
+#!/usr/bin/make -f
+
+CFLAGS =  -g
+INSTALL = install
+INSTALL_FILE    = $(INSTALL) -p    -o root -g root  -m  644
+INSTALL_PROGRAM = $(INSTALL) -p    -o root -g root  -m  755
+INSTALL_SCRIPT  = $(INSTALL) -p    -o root -g root  -m  755
+INSTALL_DIR     = $(INSTALL) -p -d -o root -g root  -m  755
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+CFLAGS += -O0
+else
+CFLAGS += -O3
+endif
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+INSTALL_PROGRAM += -s
+endif
+
+DEB_BUILD_ARCH ?= $(shell dpkg-architecture -qDEB_BUILD_ARCH)
+DEB_BUILD_GNU_CPU ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_CPU)
+DEB_BUILD_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_SYSTEM)
+DEB_BUILD_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+DEB_HOST_GNU_CPU ?= $(shell dpkg-architecture -qDEB_HOST_GNU_CPU)
+DEB_HOST_GNU_SYSTEM ?= $(shell dpkg-architecture -qDEB_HOST_GNU_SYSTEM)
+DEB_HOST_GNU_TYPE ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+
+CONFIGURE_VARS = CC=gcc CFLAGS="$(CFLAGS)" CPPFLAGS="-I/usr/include/tcl8.6"
+CONFIGURE_SWITCHES =    --prefix=/usr \
+	--mandir=\$${prefix}/share/man \
+	--localstatedir=/var \
+	--sysconfdir=/etc \
+	--libexecdir=/usr/lib \
+	--enable-cxx \
+	--enable-compat185 \
+	--enable-tcl \
+	--with-tcl=/usr/lib/tcl8.6
+
+DB_BINARY_PKGS = libdb-dev libdb4.8 libdb4.8-dev libdb4.8++ libdb4.8++-dev libdb4.8-tcl db4.8-util libdb4.8-dbg
+
+ifeq (zx86_64-linux-gnuz,z$(DEB_HOST_GNU_TYPE)z)
+CONFIGURE_SWITCHES += --with-mutex=POSIX/pthreads/library
+endif
+
+ifneq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+CONFIGURE_VARS += STRIP=":"
+endif
+
+BROKEN_ARCHES = zs390z
+VERY_BROKEN_ARCHES = zm68kz zhppaz
+
+package=db4.8
+bdbversion=4.8
+
+version=$(shell expr `pwd` : '.*-\([0-9.]*\)')
+version_major=$(shell expr `pwd` : '.*-\([0-9]*\).[0-9.]*')
+
+build build-arch:
+	$(checkdir)
+
+	mkdir -p obj
+
+	cd obj && $(CONFIGURE_VARS) \
+		../dist/configure $(CONFIGURE_SWITCHES)
+
+	cd obj && $(MAKE)
+
+ifeq (,$(findstring z$(DEB_BUILD_GNU_CPU)z,$(VERY_BROKEN_ARCHES)))
+ifeq (,$(findstring nocheck,$(DEB_BUILD_OPTIONS)))
+	chmod +x ./debian/runtests.tclsh
+	cd obj && ../debian/runtests.tclsh || true
+
+ifeq (,$(findstring z$(DEB_BUILD_GNU_CPU)z,$(BROKEN_ARCHES)))
+	! grep ^FAIL obj/ALL.OUT
+else
+	grep ^FAIL obj/ALL.OUT || true
+endif
+endif
+endif
+
+	touch build
+
+clean:
+	$(checkdir)
+	rm -rf obj
+	rm -f build install-stamp
+	rm -rf debian/tmp debian/$(package)* debian/lib$(package)* core
+	rm -f debian/substvars.*
+	rm -rf debian/libdb*
+
+install-stamp: build
+	$(checkdir)
+
+	rm -rf debian/tmp
+	$(INSTALL_DIR) debian/tmp
+
+	cd obj && $(MAKE) install prefix=$(CURDIR)/debian/tmp/usr
+
+	touch install-stamp
+
+binary-indep: checkroot build install-stamp
+	$(checkdir)
+
+	rm -rf debian/$(package)-doc
+	$(INSTALL_DIR) debian/$(package)-doc/usr/share/doc debian/$(package)-doc/DEBIAN
+
+	cd debian/tmp/usr/docs && rm -rf `find . -type d -name ".arch-ids"`
+	cp -a debian/tmp/usr/docs debian/$(package)-doc/usr/share/doc/$(package)-doc
+
+	$(INSTALL_FILE) debian/copyright debian/$(package)-doc/usr/share/doc/$(package)-doc/copyright
+	$(INSTALL_FILE) debian/changelog debian/$(package)-doc/usr/share/doc/$(package)-doc/changelog.Debian
+	gzip -9frq debian/$(package)-doc/usr/share/doc/$(package)-doc/changelog.Debian
+
+	cd debian/$(package)-doc && find * -type f ! -regex '^DEBIAN/.*' -print0 | xargs -r0 md5sum > DEBIAN/md5sums
+	dpkg-gencontrol -p$(package)-doc -Pdebian/$(package)-doc
+	chown -R root:root debian/$(package)-doc
+	chmod -R ugo=rX,u+w debian/$(package)-doc
+	dpkg --build debian/$(package)-doc ..
+
+binary-arch: checkroot build install-stamp
+	$(checkdir)
+
+	rm -rf debian/lib$(package)-dev debian/$(package)-util debian/lib$(package) \
+		debian/lib$(package)++ debian/lib$(package)++-dev debian/lib$(package)-tcl
+
+	$(INSTALL_DIR) debian/lib$(package)-dev/usr/lib \
+		debian/$(package)-util/usr/share/man/man1 \
+		debian/lib$(package)/usr/lib debian/lib$(package)++/usr/lib \
+		debian/lib$(package)++-dev/usr/include \
+		debian/lib$(package)++-dev/usr/lib \
+		debian/lib$(package)-tcl/usr/lib \
+		debian/lib$(package)-dbg/usr/lib/debug/usr/lib
+
+	objcopy --only-keep-debug debian/tmp/usr/lib/libdb-$(bdbversion).so \
+		debian/lib$(package)-dbg/usr/lib/debug/usr/lib/libdb-$(bdbversion).so.debug
+
+ifeq (,$(findstring nostrip,$(DEB_BUILD_OPTIONS)))
+	strip --remove-section=.note --remove-section=.comment \
+		debian/tmp/usr/lib/*.so debian/tmp/usr/bin/*
+	strip --strip-debug debian/tmp/usr/lib/*.a
+endif
+
+	objcopy --add-gnu-debuglink=debian/lib$(package)-dbg/usr/lib/debug/usr/lib/libdb-$(bdbversion).so.debug \
+		debian/tmp/usr/lib/libdb-$(bdbversion).so
+
+	chmod 644 debian/tmp/usr/lib/*.so debian/tmp/usr/include/*.h
+	chmod 755 debian/tmp/usr/bin/*
+
+	cp -afv debian/tmp/usr/include debian/lib$(package)-dev/usr
+	cp -afv debian/tmp/usr/bin debian/$(package)-util/usr
+	cp -afv debian/tmp/usr/lib/*.so debian/tmp/usr/lib/*.a \
+		debian/tmp/usr/lib/*.la debian/lib$(package)-dev/usr/lib
+
+	cp -afv debian/lib$(package)-dev/usr/lib/*cxx* debian/lib$(package)++-dev/usr/lib
+	cp -afv debian/lib$(package)-dev/usr/include/*cxx* debian/lib$(package)++-dev/usr/include
+	cp -afv debian/lib$(package)-dev/usr/lib/*tcl* debian/lib$(package)-tcl/usr/lib
+	cp -afv debian/lib$(package)-dev/usr/lib/libdb-$(bdbversion).so debian/lib$(package)/usr/lib
+	cp -afv debian/lib$(package)++-dev/usr/lib/libdb_cxx-$(bdbversion).so debian/lib$(package)++/usr/lib
+
+	rm -f debian/lib$(package)-dev/usr/lib/libdb.a
+	ln -sf libdb-$(bdbversion).a debian/lib$(package)-dev/usr/lib/libdb.a
+
+	cd debian/$(package)-util/usr/bin && for i in * ; \
+	 do cp $$i `echo $$i | sed 's/db/$(package)/'` ; \
+	done
+
+	cp debian/manpages/*.1 debian/$(package)-util/usr/share/man/man1
+	gzip -9frq debian/$(package)-util/usr/share/man/man1/*.1
+
+	for i in $(DB_BINARY_PKGS); \
+	do \
+		mkdir -p debian/$${i}/usr/bin; \
+		mkdir -p debian/$${i}/usr/lib; \
+		mkdir -p debian/$${i}/usr/include; \
+		mkdir -p debian/$${i}/usr/share/doc; \
+		$(INSTALL_DIR) debian/$${i}/DEBIAN debian/$${i}/usr/share/doc/$${i} ; \
+		$(INSTALL_FILE) debian/copyright debian/$${i}/usr/share/doc/$${i} ; \
+		$(INSTALL_FILE) debian/changelog debian/$${i}/usr/share/doc/$${i}/changelog.Debian ; \
+		gzip -9fq debian/$${i}/usr/share/doc/$${i}/changelog.Debian ; \
+	done
+
+	echo 'libdb $(bdbversion) lib$(package)' >debian/lib$(package)/DEBIAN/shlibs
+	echo 'libdb_cxx $(bdbversion) lib$(package)++' >debian/lib$(package)++/DEBIAN/shlibs
+	echo 'libdb_tcl $(bdbversion) lib$(package)-tcl' >debian/lib$(package)-tcl/DEBIAN/shlibs
+	$(INSTALL_SCRIPT) debian/libtcl.postinst debian/lib$(package)-tcl/DEBIAN/postinst
+	$(INSTALL_SCRIPT) debian/lib++.postinst debian/lib$(package)++/DEBIAN/postinst
+	$(INSTALL_SCRIPT) debian/lib.postinst debian/lib$(package)/DEBIAN/postinst
+
+	for i in $(DB_BINARY_PKGS); \
+	do \
+		mkdir -p debian/$${i}/usr/bin; \
+		mkdir -p debian/$${i}/usr/lib; \
+		mkdir -p debian/$${i}/usr/include; \
+		mkdir -p debian/$${i}/usr/share/doc; \
+		dpkg-shlibdeps --ignore-missing-info --warnings=0 \
+		-Tdebian/substvars.$${i} -dDepends `find debian/$${i}/usr/lib -name "*.so"` `find debian/$${i}/usr/bin -type f` ; \
+		(cd debian/$${i} && find * -type f ! -regex '^DEBIAN/.*' -print0 | xargs -r0 md5sum > DEBIAN/md5sums) ; \
+		dpkg-gencontrol -p$${i} -Pdebian/$${i} -Tdebian/substvars.$${i} ; \
+		chown -R root:root debian/$${i} ; \
+		chmod -R ugo=rX,u+w debian/$${i} ; \
+		dpkg --build debian/$${i} .. ; \
+	done
+
+define checkdir
+	test -f debian/rules
+endef
+
+binary: binary-indep binary-arch
+
+checkroot:
+	$(checkdir)
+	test root = "`whoami`"
+
+.PHONY: binary binary-arch binary-indep clean checkroot

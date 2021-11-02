@@ -3,6 +3,7 @@ db4.8-util_4.8.30-buster1_amd64.deb utils optional
 db4.8_4.8.30-buster1_amd64.buildinfo libs standard
 libdb4.8++-dev_4.8.30-buster1_amd64.deb libdevel extra
 libdb4.8++_4.8.30-buster1_amd64.deb libs optional
+libdb4.8-dbg_4.8.30-buster1_amd64.deb debug extra
 libdb4.8-dev_4.8.30-buster1_amd64.deb libdevel extra
 libdb4.8-tcl_4.8.30-buster1_amd64.deb interpreters extra
 libdb4.8_4.8.30-buster1_amd64.deb libs standard
